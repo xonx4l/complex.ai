@@ -5,6 +5,9 @@ import {
     SidebarFooter,
     SidebarGroup,
     SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
   } from "@/components/ui/sidebar"
 import Image from 'next/image';
 import { Compass, GalleryHorizontalEnd, LogIn, Search } from 'lucide-react';
@@ -38,6 +41,19 @@ function AppSidebar() {
       <Image src={'/complexlogofix.png'} alt='logo' width={260} height={20} />
       <SidebarContent className='bg-accent'>
         <SidebarGroup />
+        <SidebarContent>
+          <SidebarMenu>
+            {MenuOptions.map((menu,index) => (
+              <SidebarMenuItem>
+              <SidebarMenuButton>
+                 <a href={menu.path}>
+                   <menu.icon />
+                 </a>
+              </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarContent>
         <SidebarGroup />
       </SidebarContent>
       <SidebarFooter />
