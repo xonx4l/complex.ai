@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import {
     Sidebar,
@@ -11,6 +12,7 @@ import {
   } from "@/components/ui/sidebar"
 import Image from 'next/image';
 import { Compass, GalleryHorizontalEnd, LogIn, Search } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const MenuOptions=[
   {
@@ -21,20 +23,21 @@ const MenuOptions=[
   {
     title: 'Discover',
     icon: Compass,
-    path: '/'
+    path: '/discover'
   },
   {
     title: 'Library',
     icon: GalleryHorizontalEnd,
-    path: '/'
+    path: '/library'
   },
   {
     title: 'Sign in',
     icon: LogIn,
-    path: '/'
+    path: '#'
   },
 ]
 function AppSidebar() {
+    const Path = usePathname();
     return (
         <Sidebar>
       <SidebarHeader className='bg-accent flex items-center py-5'/>
@@ -45,9 +48,10 @@ function AppSidebar() {
           <SidebarMenu>
             {MenuOptions.map((menu,index) => (
               <SidebarMenuItem key={index}>
-              <SidebarMenuButton asChild className={'p-5'}>
+              <SidebarMenuButton asChild className={`p-5 py-6 hover:bg-transparent hover:font-bold
+               ${Path === menu.path && 'font-bold'}`}>
                  <a href={menu.path} className = ''>
-                   <menu.icon />
+                   <menu.icon  className= 'h-8  w-8'/>
                    <span className='text-lg'> {menu.title} </span>
                  </a>
               </SidebarMenuButton>
