@@ -24,12 +24,12 @@ const MenuOptions=[
     path: '/'
   },
   {
-    title: 'Home',
+    title: 'Library',
     icon: GalleryHorizontalEnd,
     path: '/'
   },
   {
-    title: 'Home',
+    title: 'Sign in',
     icon: LogIn,
     path: '/'
   },
@@ -44,10 +44,11 @@ function AppSidebar() {
         <SidebarContent>
           <SidebarMenu>
             {MenuOptions.map((menu,index) => (
-              <SidebarMenuItem>
-              <SidebarMenuButton>
-                 <a href={menu.path}>
+              <SidebarMenuItem key={index}>
+              <SidebarMenuButton asChild className={'p-5'}>
+                 <a href={menu.path} className = ''>
                    <menu.icon />
+                   <span className='text-lg'> {menu.title} </span>
                  </a>
               </SidebarMenuButton>
               </SidebarMenuItem>
