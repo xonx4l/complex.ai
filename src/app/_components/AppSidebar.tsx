@@ -13,6 +13,7 @@ import {
 import Image from 'next/image';
 import { Compass, GalleryHorizontalEnd, LogIn, Search } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 const MenuOptions=[
   {
@@ -58,6 +59,8 @@ function AppSidebar() {
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
+
+          <Button className='rounded-full' mx-4 mt-4> Sign up </Button>
         </SidebarContent>
         <SidebarGroup />
       </SidebarContent>
