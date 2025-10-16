@@ -65,6 +65,7 @@ function AppSidebar() {
         <SidebarGroup />
       </SidebarContent>
       <SidebarFooter />
+     
     </Sidebar>
     )
 }

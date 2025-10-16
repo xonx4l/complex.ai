@@ -1,9 +1,10 @@
 import Image from "next/image";
+import ChatBox from "./_components/ChatBox";
 
 export default function Home() {
   return (
-    <div>
-      <h2>  </h2>
+    <div className="w-full">
+      <ChatBox></ChatBox>
     </div>
   )
 }
